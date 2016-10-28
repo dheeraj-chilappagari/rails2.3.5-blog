@@ -8,6 +8,20 @@
   <%=h @post.body %>
 </p>
 
+<p> Comments </p>
+<% if @comments.present? %>
+	<% @comments.each do |comment| %>
+		<div> Commented by <%= comment.commenter %> :
+		<%= comment.body %> </div>
+	<% end %>
+<% end %>
+
+
+
+<%form_tag(:url => "/post_comment", :remote => true) do %>
+	<%= label_tag :commenter %>
+	<%= text_field_tag :commenter %>
+<% end %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

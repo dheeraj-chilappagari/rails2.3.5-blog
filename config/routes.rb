@@ -3,6 +3,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => "posts"
 
+  map.connect 'post_comments', :controller => "posts", :action => "post_comments"
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

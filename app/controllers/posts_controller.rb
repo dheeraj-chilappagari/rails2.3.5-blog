@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   # GET /posts/1.xml
   def show
     @post = Post.find(params[:id])
-
+    @comments = @post.comments
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @post }
@@ -81,5 +81,10 @@ class PostsController < ApplicationController
       format.html { redirect_to(posts_url) }
       format.xml  { head :ok }
     end
+  end
+
+
+  def post_comment
+    
   end
 end

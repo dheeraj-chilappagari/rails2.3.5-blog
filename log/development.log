@@ -23,3 +23,755 @@ Processing PostsController#index (for 127.0.0.1 at 2016-10-25 16:23:04) [GET]
 Rendering template within layouts/posts
 Rendering posts/index
 Completed in 41ms (View: 38, DB: 0) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2016-10-25 16:51:11) [GET]
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 62ms (View: 40, DB: 0) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2016-10-25 19:01:31) [GET]
+  [4;35;1mPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 33ms (View: 27, DB: 1) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2016-10-25 19:01:42) [POST]
+  Parameters: {"authenticity_token"=>"NjFHgAlUt99Q7LvRARcgv6uE3+3iJsB+/eT5sjHLSio=", "post"=>{"title"=>"sample", "body"=>"testing this application"}, "commit"=>"Create"}
+  [4;36;1mPost Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO `posts` (`title`, `body`, `created_at`, `updated_at`) VALUES('sample', 'testing this application', '2016-10-25 13:31:42', '2016-10-25 13:31:42')[0m
+  [4;35;1mSQL (122.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed in 128ms (DB: 123) | 302 Found [http://localhost/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-25 19:01:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 28ms (View: 26, DB: 1) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show to xml (for 127.0.0.1 at 2016-10-25 19:01:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Completed in 422ms (View: 419, DB: 0) | 200 OK [http://localhost/posts/1.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show to json (for 127.0.0.1 at 2016-10-25 19:01:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Completed in 5ms (View: 0, DB: 1) | 406 Not Acceptable [http://localhost/posts/1.json]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2016-10-25 19:02:01) [GET]
+
+ActionController::RoutingError (No route matches "/posts/1." with {:method=>:get}):
+  /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-25 19:02:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show to xml (for 127.0.0.1 at 2016-10-25 19:02:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Completed in 5ms (View: 2, DB: 1) | 200 OK [http://localhost/posts/1.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index to xml (for 127.0.0.1 at 2016-10-25 19:02:31) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM `posts` [0m
+  [4;35;1mPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/posts.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2016-10-25 19:02:44) [GET]
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/posts
+Rendering posts/index
+  [4;35;1mPost Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 5ms (View: 2, DB: 1) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2016-10-25 19:02:51) [GET]
+  [4;36;1mPost Columns (0.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2016-10-25 19:03:02) [POST]
+  Parameters: {"authenticity_token"=>"NjFHgAlUt99Q7LvRARcgv6uE3+3iJsB+/eT5sjHLSio=", "post"=>{"title"=>"sample1", "body"=>"test it again"}, "commit"=>"Create"}
+  [4;35;1mPost Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Create (0.4ms)[0m   [0mINSERT INTO `posts` (`title`, `body`, `created_at`, `updated_at`) VALUES('sample1', 'test it again', '2016-10-25 13:33:02', '2016-10-25 13:33:02')[0m
+  [4;36;1mSQL (109.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/2
+Completed in 116ms (DB: 111) | 302 Found [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-25 19:03:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://localhost/posts/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2016-10-25 19:03:05) [GET]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/posts
+Rendering posts/index
+  [4;36;1mPost Columns (0.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index to xml (for 127.0.0.1 at 2016-10-25 19:03:09) [GET]
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` [0m
+  [4;36;1mPost Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Completed in 5ms (View: 2, DB: 1) | 200 OK [http://localhost/posts.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2016-10-26 12:36:59) [GET]
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/posts
+Rendering posts/index
+  [4;35;1mPost Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 93ms (View: 90, DB: 1) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-26 12:59:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 17ms (View: 14, DB: 1) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20161025104824)
+Migrating to CreateComments (20161026073308)
+  [4;36;1mSQL (99.0ms)[0m   [0;1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `commenter` varchar(255), `body` text, `post_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (111.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20161026073308')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `posts`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mComment Columns (0.2ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mPost Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+  [4;36;1mComment Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO `comments` (`created_at`, `body`, `commenter`, `post_id`, `updated_at`) VALUES('2016-10-26 07:39:29', 'Some test', 'Veerababu', 1, '2016-10-26 07:39:29')[0m
+  [4;35;1mSQL (64.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+  [4;35;1mComment Load (0.5ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-26 13:10:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-26 13:10:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;35;1mComment Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Completed in 16ms (View: 4, DB: 2) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-26 13:11:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;35;1mComment Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Completed in 33ms (View: 4, DB: 1) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-26 13:11:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;35;1mComment Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #20 of app/views/posts/show.html.erb:
+17: <% end %>
+18: 
+19: 
+20: <%form_for do |f|%>
+21: <% end %>
+22: 
+23: <%= link_to 'Edit', edit_post_path(@post) %> |
+
+    app/views/posts/show.html.erb:20:in `form_for'
+    app/views/posts/show.html.erb:20
+    app/controllers/posts_controller.rb:18:in `show'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (17.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-26 13:12:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+ERROR: compiling _run_erb_app47views47posts47show46html46erb RAISED compile error
+/home/veerababu/Projects/blog/app/views/posts/show.html.erb:20: syntax error, unexpected ')'
+...ffer.concat(( form_tag do |f|).to_s); @output_buffer.concat ...
+                              ^
+/home/veerababu/Projects/blog/app/views/posts/show.html.erb:25: syntax error, unexpected kENSURE, expecting ')'
+/home/veerababu/Projects/blog/app/views/posts/show.html.erb:27: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47posts47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<p>\n  <b>Title:</b>\n  "
+
+; @output_buffer.concat((h @post.title ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Body:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @post.body ).to_s); @output_buffer.concat "\n</p>\n\n<p> Comments </p>\n"
+
+
+
+;  if @comments.present? ; @output_buffer.concat "\n\t"
+;  @comments.each do |comment| ; @output_buffer.concat "\n\t\t<div> Commented by "
+; @output_buffer.concat(( comment.commenter ).to_s); @output_buffer.concat "\n\t\t"
+; @output_buffer.concat(( comment.body ).to_s); @output_buffer.concat " </div>\n\t"
+;  end ; @output_buffer.concat "\n"
+;  end ; @output_buffer.concat "\n\n\n"
+
+
+; @output_buffer.concat(( form_tag do |f|).to_s); @output_buffer.concat "\n"
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( link_to 'Edit', edit_post_path(@post) ).to_s); @output_buffer.concat " |\n"
+; @output_buffer.concat(( link_to 'Back', posts_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/veerababu/Projects/blog/app/views/posts/show.html.erb:27:in `compile!'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/veerababu/Projects/blog/app/controllers/posts_controller.rb:18:in `show'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/home/veerababu/.rvm/gems/ruby-1.8.7-p374/gems/rails-2.3.5/lib/commands/server.rb:111
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+/home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/veerababu/Projects/blog/app/views/posts/show.html.erb:20: syntax error, unexpected ')'
+...ffer.concat(( form_tag do |f|).to_s); @output_buffer.concat ...
+                              ^
+/home/veerababu/Projects/blog/app/views/posts/show.html.erb:25: syntax error, unexpected kENSURE, expecting ')'
+/home/veerababu/Projects/blog/app/views/posts/show.html.erb:27: syntax error, unexpected kEND, expecting ')') on line #20 of app/views/posts/show.html.erb:
+17: <% end %>
+18: 
+19: 
+20: <%= form_tag do |f|%>
+21: <% end %>
+22: 
+23: <%= link_to 'Edit', edit_post_path(@post) %> |
+
+    app/views/posts/show.html.erb:27:in `compile!'
+    app/controllers/posts_controller.rb:18:in `show'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (14.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-26 13:12:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.0ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;35;1mComment Columns (0.2ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Completed in 6ms (View: 3, DB: 1) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-26 13:12:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;35;1mComment Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+
+ActionView::TemplateError (undefined method `comments_path' for #<ActionView::Base:0x7f5bea4899d0>) on line #20 of app/views/posts/show.html.erb:
+17: <% end %>
+18: 
+19: 
+20: <%form_for(@post.comments.new) do |f|%>
+21: <% end %>
+22: 
+23: <%= link_to 'Edit', edit_post_path(@post) %> |
+
+    app/views/posts/show.html.erb:20
+    app/controllers/posts_controller.rb:18:in `show'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/veerababu/.rvm/rubies/ruby-1.8.7-p374/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (16.3ms)
+Rendered rescues/_request_and_response (0.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-26 13:13:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;35;1mComment Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Completed in 39ms (View: 3, DB: 1) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-26 13:13:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;35;1mComment Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-26 13:17:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;35;1mComment Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-26 13:17:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.0ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;35;1mComment Columns (0.2ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Completed in 34ms (View: 30, DB: 1) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2016-10-26 13:18:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;35;1mComment Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Completed in 15ms (View: 8, DB: 2) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 172.22.128.45 at 2016-10-26 14:42:07) [GET]
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/posts
+Rendering posts/index
+  [4;35;1mPost Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 18ms (View: 13, DB: 0) | 200 OK [http://172.22.128.45/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 172.22.128.45 at 2016-10-26 15:35:10) [GET]
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/posts
+Rendering posts/index
+  [4;35;1mPost Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://172.22.128.45/posts]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 172.22.129.53 at 2016-10-26 15:35:49) [GET]
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/posts
+Rendering posts/index
+  [4;35;1mPost Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://172.22.128.45/posts]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 172.22.129.53 at 2016-10-26 15:35:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;35;1mComment Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Completed in 20ms (View: 9, DB: 2) | 200 OK [http://172.22.128.45/posts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 172.22.128.45 at 2016-10-26 15:36:15) [GET]
+  [4;36;1mPost Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 8ms (View: 5, DB: 1) | 200 OK [http://172.22.128.45/posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 172.22.128.45 at 2016-10-26 15:36:20) [POST]
+  Parameters: {"authenticity_token"=>"ZzQHJ/1d29tko8YJ7Na6FPL5h8Dkrj7RKHjmeAzRlro=", "post"=>{"title"=>"Soemthinkgnsdkfjasl", "body"=>"sdfjasflkjaslfjafasdjkl"}, "commit"=>"Create"}
+  [4;35;1mPost Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Create (0.3ms)[0m   [0mINSERT INTO `posts` (`title`, `updated_at`, `created_at`, `body`) VALUES('Soemthinkgnsdkfjasl', '2016-10-26 10:06:20', '2016-10-26 10:06:20', 'sdfjasflkjaslfjafasdjkl')[0m
+  [4;36;1mSQL (77.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://172.22.128.45/posts/3
+Completed in 89ms (DB: 79) | 302 Found [http://172.22.128.45/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 172.22.128.45 at 2016-10-26 15:36:20) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Columns (0.2ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 3) [0m
+Completed in 5ms (View: 2, DB: 1) | 200 OK [http://172.22.128.45/posts/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 172.22.128.45 at 2016-10-26 15:36:22) [GET]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/posts
+Rendering posts/index
+  [4;35;1mPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://172.22.128.45/posts]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 172.22.129.53 at 2016-10-26 15:36:29) [GET]
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/posts
+Rendering posts/index
+  [4;35;1mPost Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://172.22.128.45/posts]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 172.22.128.45 at 2016-10-26 18:38:58) [GET]
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/posts
+Rendering posts/index
+  [4;35;1mPost Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 54ms (View: 24, DB: 1) | 200 OK [http://172.22.128.45/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 172.22.128.45 at 2016-10-26 18:39:13) [GET]
+  [4;36;1mPost Columns (0.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://172.22.128.45/posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 172.22.128.45 at 2016-10-26 18:39:21) [POST]
+  Parameters: {"authenticity_token"=>"ZzQHJ/1d29tko8YJ7Na6FPL5h8Dkrj7RKHjmeAzRlro=", "post"=>{"title"=>"test", "body"=>"testss"}, "commit"=>"Create"}
+  [4;35;1mPost Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO `posts` (`title`, `updated_at`, `created_at`, `body`) VALUES('test', '2016-10-26 13:09:21', '2016-10-26 13:09:21', 'testss')[0m
+  [4;36;1mSQL (93.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://172.22.128.45/posts/4
+Completed in 100ms (DB: 94) | 302 Found [http://172.22.128.45/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 172.22.128.45 at 2016-10-26 18:39:22) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPost Columns (0.2ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 4) [0m
+Completed in 23ms (View: 2, DB: 1) | 200 OK [http://172.22.128.45/posts/4]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 172.22.128.45 at 2016-10-26 18:39:25) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/posts
+Rendering posts/index
+  [4;35;1mPost Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://172.22.128.45/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 172.22.128.45 at 2016-10-28 12:18:11) [GET]
+
+
+Processing PostsController#index (for 172.22.128.45 at 2016-10-28 12:18:11) [GET]
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendering template within layouts/posts
+Rendering posts/index
+  [4;35;1mPost Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 81ms (View: 74, DB: 1) | 200 OK [http://172.22.128.45/posts]
+Completed in 81ms (View: 74, DB: 1) | 200 OK [http://172.22.128.45/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 172.22.128.45 at 2016-10-28 12:20:54) [GET]
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/posts
+Rendering posts/index
+  [4;35;1mPost Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://172.22.128.45/posts]
